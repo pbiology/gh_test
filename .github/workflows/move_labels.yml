@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Assign to One Project
     steps:
-#    - name: Assign NEW issues to Unsorted
-#      uses: srggrs/assign-one-project-github-action@1.2.1
-#      if: github.event.action == 'opened'
-#      with:
-#        project: 'https://github.com/pbiology/gh_test/projects/1'
-#        column_name: 'Unsorted'
+    - name: Assign NEW issues to Unsorted
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: github.event.action == 'opened'
+      with:
+        project: 'https://github.com/pbiology/gh_test/projects/1'
+        column_name: 'Unsorted'
 
     - name: Assign issues with `Rare Diseas` label to project
       uses: srggrs/assign-one-project-github-action@1.2.1
@@ -27,7 +27,6 @@ jobs:
         project: 'https://github.com/pbiology/gh_test/projects/1'
         column_name: 'Area: Rare Disease'
 
-
     - name: Assign issues with `Cancer` label to project
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: |
@@ -36,3 +35,58 @@ jobs:
       with:
         project: 'https://github.com/pbiology/gh_test/projects/1'
         column_name: 'Area: Cancer'
+
+    - name: Assign issues with `Infrastructure` label to project
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: |
+        contains(github.event.issue.labels.*.name, 'Area: Infrastructure') &&
+        contains(github.event.issue.labels.*.name, 'project proposal')
+      with:
+        project: 'https://github.com/pbiology/gh_test/projects/1'
+        column_name: 'Area: Infrastructure'
+
+    - name: Assign issues with `Lab` label to project
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: |
+        contains(github.event.issue.labels.*.name, 'Area: Lab') &&
+        contains(github.event.issue.labels.*.name, 'project proposal')
+      with:
+        project: 'https://github.com/pbiology/gh_test/projects/1'
+        column_name: 'Area: Lab'
+
+    - name: Assign issues with `Micro` label to project
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: |
+        contains(github.event.issue.labels.*.name, 'Area: Micro') &&
+        contains(github.event.issue.labels.*.name, 'project proposal')
+      with:
+        project: 'https://github.com/pbiology/gh_test/projects/1'
+        column_name: 'Area: Micro'
+
+    - name: Assign issues with `NIPT` label to project
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: |
+        contains(github.event.issue.labels.*.name, 'Area: NIPT') &&
+        contains(github.event.issue.labels.*.name, 'project proposal')
+      with:
+        project: 'https://github.com/pbiology/gh_test/projects/1'
+        column_name: 'Area: NIPT'
+        
+    - name: Assign issues with `Other/General` label to project
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: |
+        contains(github.event.issue.labels.*.name, 'Area: Other/General') &&
+        contains(github.event.issue.labels.*.name, 'project proposal')
+      with:
+        project: 'https://github.com/pbiology/gh_test/projects/1'
+        column_name: 'Area: Other/General'
+        
+    - name: Assign issues with `QA` label to project
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: |
+        contains(github.event.issue.labels.*.name, 'Area: QA') &&
+        contains(github.event.issue.labels.*.name, 'project proposal')
+      with:
+        project: 'https://github.com/pbiology/gh_test/projects/1'
+        column_name: 'Area: QA'
+
