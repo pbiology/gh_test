@@ -2,7 +2,7 @@ name: Auto assign to project columns based on labels
 
 on:
   issues:
-    types: [opened, labeled]
+    types: [labeled]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -11,13 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Assign to One Project
     steps:
-    - name: Assign NEW issues to Unsorted
-      uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event.action == 'opened'
-      with:
-        project: 'https://github.com/pbiology/gh_test/projects/1'
-        column_name: 'Unsorted'
-
     - name: Assign issues with `Rare Diseas` label to project
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: |
