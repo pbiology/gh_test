@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       with:
-        action-token: "${{ secrets.MOVE_LABELS }}"
+        action-token: "${{ secrets.MOVE_LABEL }}"
         project-url: "https://github.com/users/pbiology/projects/3"
         column-name: "Area: Rare Disease"
         label-name: "Area: Rare Disease"
