@@ -1,0 +1,48 @@
+name: Move new issues into Triage
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+#  automate-project-columns:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: alex-page/github-project-automation-plus@v0.8.1
+#        with:
+#          project: gh_test_proj
+#          column: Area: Rare Disease
+#          repo-token: ${{ secrets.MOVE_LABEL }}
+  setup-matrixJson:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3.0.1
+        with:
+          repository: 'vapor/ci'
+      - name: handle input  
+        id: set-matrix
+        run: |
+          sudo bash script.sh ${{ inputs.labelsJson }}
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+         
+  manage_project_issues:
+      needs: setup-matrixJson
+      strategy:
+        fail-fast: false
+        matrix: ${{ fromJSON(needs.setup-matrixJson.outputs.matrix) }}
+      runs-on: ubuntu-latest    
+      if: contains(github.event.issue.labels.*.name, 'Area: Rare Disease') && contains(github.event.issue.labels.*.name, 'Project Proposal')  
+      steps:
+          # When an issue that is open is labeled, unassigned or reopened without a assigned member
+          # create or move the card to "To do"
+        - name: Create or Update Project Card
+          if: | 
+            github.event.action == 'labeled'
+          uses: alex-page/github-project-automation-plus@v0.8.1
+          with:
+            project: gh_test_proj
+            column: 'Area: Rare Disease'
+            repo-token: ${{ secrets.MOVE_LABEL }}
+
