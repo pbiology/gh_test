@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Assign to One Project
     steps:
-    - name: Assign NEW issues to Unsorted
-      uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event.action == 'opened'
-      with:
-        project: 'https://github.com/pbiology/gh_test/projects/1'
-        column_name: 'Unsorted'
+#    - name: Assign NEW issues to Unsorted
+#      uses: srggrs/assign-one-project-github-action@1.2.1
+#      if: github.event.action == 'opened'
+#      with:
+#        project: 'https://github.com/pbiology/gh_test/projects/1'
+#        column_name: 'Unsorted'
 
     - name: Assign issues with `Rare Diseas` label to project
       uses: srggrs/assign-one-project-github-action@1.2.1
@@ -26,3 +26,13 @@ jobs:
       with:
         project: 'https://github.com/pbiology/gh_test/projects/1'
         column_name: 'Area: Rare Disease'
+
+
+    - name: Assign issues with `Cancer` label to project
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: |
+        contains(github.event.issue.labels.*.name, 'Area: Cancer') &&
+        contains(github.event.issue.labels.*.name, 'project proposal')
+      with:
+        project: 'https://github.com/pbiology/gh_test/projects/1'
+        column_name: 'Area: Cancer'
