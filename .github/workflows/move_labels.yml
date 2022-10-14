@@ -1,0 +1,14 @@
+on:
+  issues:
+    types: [labeled]
+jobs:
+  Move_Labeled_Issue_On_Project_Board:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.MOVE_LABELS }}"
+        project-url: "https://github.com/pbiology/gh_test/projects/1"
+        column-name: "Area: Rare Disease"
+        label-name: "Area: Rare Disease"
+        columns-to-ignore: "In Review,Ready to deploy,Done"
