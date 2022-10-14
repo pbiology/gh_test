@@ -21,8 +21,8 @@ jobs:
     - name: Assign issues with `Rare Diseas` label to project
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: |
-        contains(github.event.issue.labels.*.name, 'Rare Disease') &&
+        contains(github.event.issue.labels.*.name, 'Area: Rare Disease') &&
         contains(github.event.issue.labels.*.name, 'project proposal')
       with:
         project: 'https://github.com/pbiology/gh_test/projects/1'
-        column_name: 'Rare Disease'
+        column_name: 'Area: Rare Disease'
