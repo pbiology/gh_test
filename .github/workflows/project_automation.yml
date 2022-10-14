@@ -33,7 +33,7 @@ jobs:
         fail-fast: false
         matrix: ${{ fromJSON(needs.setup-matrixJson.outputs.matrix) }}
       runs-on: ubuntu-latest    
-      if: contains(github.event.issue.labels.*.name, 'Area: Rare Disease') && contains(github.event.issue.labels.*.name, 'Project Proposal')  
+      if: contains(github.event.issue.labels.*.name, 'Area\: Rare Disease') && contains(github.event.issue.labels.*.name, 'Project Proposal')  
       steps:
           # When an issue that is open is labeled, unassigned or reopened without a assigned member
           # create or move the card to "To do"
