@@ -17,7 +17,7 @@ jobs:
 #      - uses: alex-page/github-project-automation-plus@v0.8.1
 #        with:
 #          project: gh_test_proj
-#          column: Area: Rare Disease
+#          column: 'Rare Disease'
 #          repo-token: ${{ secrets.MOVE_LABEL }}
   setup-matrixJson:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
         fail-fast: false
         matrix: ${{ fromJSON(needs.setup-matrixJson.outputs.matrix) }}
       runs-on: ubuntu-latest    
-      if: contains(github.event.issue.labels.*.name, 'Area\: Rare Disease') && contains(github.event.issue.labels.*.name, 'Project Proposal')  
+      if: contains(github.event.issue.labels.*.name, 'Rare Disease') && contains(github.event.issue.labels.*.name, 'Project Proposal')  
       steps:
           # When an issue that is open is labeled, unassigned or reopened without a assigned member
           # create or move the card to "To do"
@@ -49,6 +49,6 @@ jobs:
           uses: alex-page/github-project-automation-plus@v0.8.1
           with:
             project: gh_test_proj
-            column: 'Area: Rare Disease'
+            column: 'Rare Disease'
             repo-token: ${{ secrets.MOVE_LABEL }}
 
