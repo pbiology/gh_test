@@ -62,26 +62,26 @@ body:
       label: Relevant log output
       description: If applicable, provide relevant log output. No need for backticks here.
       render: shell
-  - type: markdown
-    attributes:
-      values: |
-        ## Reference information
-        This section holds reference information to help you when filling out a deviation
-        ### Driver
-
-        | Example of deviation                     | Deviation driver                                                               |
-        |------------------------------------------|--------------------------------------------------------------------------------|
-        | Bioinfo analyses                         | Prod Man Bioinfo                                                               |
-        | Wet lab analyses                         | Prod Man Lab                                                                   |
-        | Planned deviations                       | Issuer or relevant part of Management                                          |
-        | Equipment, tool or system malfunctioning | [Responsible](https://atlas.scilifelab.se/infrastructure/equipment_and_tools/) |
-        | Management related issues                | QA man                                                                         |
-
-        ### Consequence vs probability matrix
-        
-        |                                     | Minor effect _Bagatelle_ | Long term effect _Disablement_ | Severe effect _Large impact_ |
-        |-------------------------------------|--------------------------|--------------------------------|------------------------------|
-        | **Unlikely _Once every ten years_** | 1                        | 2                              | 3                            |
-        | **Rare _Quarterly/yearly basis_**   | 2                        | 4                              | 6                            |
-        | **Common _Weekly/monthly basis_**   | 3                        | 6                              | 9                            |
-        
+#  - type: markdown
+#    attributes:
+#      values: |
+#        ## Reference information
+#        This section holds reference information to help you when filling out a deviation
+#        ### Driver
+#
+#        | Example of deviation                     | Deviation driver                                                               |
+#        |------------------------------------------|--------------------------------------------------------------------------------|
+#        | Bioinfo analyses                         | Prod Man Bioinfo                                                               |
+#        | Wet lab analyses                         | Prod Man Lab                                                                   |
+#        | Planned deviations                       | Issuer or relevant part of Management                                          |
+#        | Equipment, tool or system malfunctioning | [Responsible](https://atlas.scilifelab.se/infrastructure/equipment_and_tools/) |
+#        | Management related issues                | QA man                                                                         |
+#
+#        ### Consequence vs probability matrix
+#
+#        |                                     | Minor effect _Bagatelle_ | Long term effect _Disablement_ | Severe effect _Large impact_ |
+#        |-------------------------------------|--------------------------|--------------------------------|------------------------------|
+#        | **Unlikely _Once every ten years_** | 1                        | 2                              | 3                            |
+#        | **Rare _Quarterly/yearly basis_**   | 2                        | 4                              | 6                            |
+#        | **Common _Weekly/monthly basis_**   | 3                        | 6                              | 9                            |
+#
