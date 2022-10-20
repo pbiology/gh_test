@@ -62,6 +62,10 @@ body:
       label: Relevant log output
       description: If applicable, provide relevant log output. No need for backticks here.
       render: shell
+  - type: markdown
+    attributes:
+        values: |
+          Hello
 #  - type: markdown
 #    attributes:
 #      values: |
@@ -84,4 +88,4 @@ body:
 #        | **Unlikely _Once every ten years_** | 1                        | 2                              | 3                            |
 #        | **Rare _Quarterly/yearly basis_**   | 2                        | 4                              | 6                            |
 #        | **Common _Weekly/monthly basis_**   | 3                        | 6                              | 9                            |
-#
+
