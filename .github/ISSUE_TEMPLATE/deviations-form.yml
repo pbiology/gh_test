@@ -64,7 +64,7 @@ body:
       render: shell
   - type: markdown
     attributes:
-        values: |
+      value: |
           Hello
 #  - type: markdown
 #    attributes:
