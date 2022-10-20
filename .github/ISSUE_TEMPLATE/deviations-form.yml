@@ -10,58 +10,103 @@ body:
         
         Thank you for taking the time to file a bug report. To address this bug as fast as possible, we need some information.
   - type: input
-    id: os
+    id: identifier
     attributes:
-      label: Operating system
-      description: "Which operating system do you use? Please provide the version as well."
-      placeholder: "macOS Big Sur 11.5.2"
-    validations:
-      required: true
+      label: Identifier
+      description: "For plate name and flow cell the link to the LIMS step can be added"
+      placeholder: "LIMS sample id /plate name, Flow cell or other common Identifier"
   - type: input
-    id: laravel
+    id: atlas
     attributes:
-      label: Laravel Version
-      description: "Please provide the full Laravel version of your project."
-      placeholder: "v8.6.1"
-    validations:
-      required: true
+      label: Atlas instructions
+      description: "Include version of Atlas used"
+      placeholder: "Example: https://atlas.scilifelab.se/production/lab/sequencing/novaseq_method/ Atlas version 6.14.94*"
   - type: input
-    id: php
+    id: equipment
     attributes:
-      label: PHP Version
-      description: "Please provide the full PHP version that is powering Tinkerwell."
-      placeholder: "PHP 8.0.7, built: Jun  4 2021 01:50:04"
-    validations:
-      required: true
-  - type: dropdown
-    id: location
+      label: Equipment/Tool name
+      description: "As listed in [Equipment and tools in Atlas](https://atlas.scilifelab.se/infrastructure/equipment_and_tools/)"
+  - type: input
+    id: grade
     attributes:
-      label: Project Location
-      description: Where is the project located?
-      options:
-        - Local
-        - Remote
-        - Somewhere else (please specify in the description!)
-    validations:
-      required: true
+      label: Grade
+      description: "1-9, as described in [deviations documentation](https://atlas.scilifelab.se/organisation/improvement_deviation_and_corrective_action/)"
+  - type: input
+    id: period
+    attributes:
+      label: Time period
+      description: "Either single occasion or intervall"
+      placeholder: "YYYY-MM-DD"
+  - type: input
+    id: driver
+    attributes:
+      label: Deviation driver
+      description: "Se section Driver in reference material below"
+  - type: input
+    id: extra
+    attributes:
+      label: Additional information
+      description: "Suggestion of other information to add if deemed relevant"
+      placeholder: "Examples: Apptag, Ticket in SuSy and Customer ID"
   - type: textarea
-    id: bug-description
+    id: description
     attributes:
-      label: Bug description
-      description: What happened?
-    validations:
-      required: true
-  - type: textarea
-    id: steps
-    attributes:
-      label: Steps to reproduce
-      description: Which steps do we need to take to reproduce this error?
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: If applicable, provide relevant log output. No need for backticks here.
-      render: shell
+      label: Full description
+      description: "Describe the issue. Each entry is dated in format YYYY-MM-DD and ended with sign"
+
+#  - type: input
+#    id: os
+#    attributes:
+#      label: Operating system
+#      description: "Which operating system do you use? Please provide the version as well."
+#      placeholder: "macOS Big Sur 11.5.2"
+#    validations:
+#      required: true
+#  - type: input
+#    id: laravel
+#    attributes:
+#      label: Laravel Version
+#      description: "Please provide the full Laravel version of your project."
+#      placeholder: "v8.6.1"
+#    validations:
+#      required: true
+#  - type: input
+#    id: php
+#    attributes:
+#      label: PHP Version
+#      description: "Please provide the full PHP version that is powering Tinkerwell."
+#      placeholder: "PHP 8.0.7, built: Jun  4 2021 01:50:04"
+#    validations:
+#      required: true
+#  - type: dropdown
+#    id: location
+#    attributes:
+#      label: Project Location
+#      description: Where is the project located?
+#      options:
+#        - Local
+#        - Remote
+#        - Somewhere else (please specify in the description!)
+#    validations:
+#      required: true
+#  - type: textarea
+#    id: bug-description
+#    attributes:
+#      label: Bug description
+#      description: What happened?
+#    validations:
+#      required: true
+#  - type: textarea
+#    id: steps
+#    attributes:
+#      label: Steps to reproduce
+#      description: Which steps do we need to take to reproduce this error?
+#  - type: textarea
+#    id: logs
+#    attributes:
+#      label: Relevant log output
+#      description: If applicable, provide relevant log output. No need for backticks here.
+#      render: shell
   - type: markdown
     attributes:
       value: |
