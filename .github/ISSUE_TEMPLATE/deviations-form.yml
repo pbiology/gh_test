@@ -1,14 +1,14 @@
-name: Bug
-description: File a bug report
+name: Deviation
+description: File a deviation
 body:
   - type: markdown
     attributes:
       value: |
-        Before opening a bug report, please search for the behaviour in the existing issues. 
+        Instructions to fill in the template available in repos README file.
+        Full instructions on deviation management in [Atlas](https://atlas.scilifelab.se/organisation/improvement_deviation_and_corrective_action/).
         
         ---
-        
-        Thank you for taking the time to file a bug report. To address this bug as fast as possible, we need some information.
+
   - type: input
     id: identifier
     attributes:
@@ -110,6 +110,9 @@ body:
   - type: markdown
     attributes:
       value: |
+        
+        ---
+        
         ## Reference information
         This section holds reference information to help you when filling out a deviation
         ### Driver
