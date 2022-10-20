@@ -56,14 +56,23 @@ body:
     attributes:
       label: Full description
       description: "Describe the issue. Each entry is dated in format YYYY-MM-DD and ended with sign"
-  - type: checkboxes
-    id: repeated
-    attributes:
-      label: Repeated failure
-      description: "Is this a repeated failure?"
-      options:
-        - label: Yes
-        - label: No
+- type: checkboxes
+  id: operating-systems
+  attributes:
+    label: Which operating systems have you used?
+    description: You may select more than one.
+    options:
+      - label: macOS
+      - label: Windows
+      - label: Linux
+#  - type: checkboxes
+#    id: repeated
+#    attributes:
+#      label: Repeated failure
+#      description: "Is this a repeated failure?"
+#      options:
+#        - label: Yes
+#        - label: No
 #  - type: textarea
 #    id: repeat-link
 #    attributes:
