@@ -56,19 +56,19 @@ body:
     attributes:
       label: Full description
       description: "Describe the issue. Each entry is dated in format YYYY-MM-DD and ended with sign"
-  - type: checkboxes
-    id: repeated
-    attributes:
-      label: Repeated failure
-      description: "Is this a repeated failure?"
-      options:
-        - label: Yes
-        - label: No
-  - type: textarea
-    id: repeat-link
-    attributes:
-      label: Link to repeated failure
-      description: "If yes above, provide a link to the deviation here"
+#  - type: checkboxes
+#    id: repeated
+#    attributes:
+#      label: Repeated failure
+#      description: "Is this a repeated failure?"
+#      options:
+#        - label: Yes
+#        - label: No
+#  - type: textarea
+#    id: repeat-link
+#    attributes:
+#      label: Link to repeated failure
+#      description: "If yes above, provide a link to the deviation here"
 #  - type: input
 #    id: os
 #    attributes:
