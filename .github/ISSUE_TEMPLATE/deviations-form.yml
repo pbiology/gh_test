@@ -61,8 +61,8 @@ body:
     attributes:
       label: Repeated failure?
       options:
-        - label: Yes
-        - label: No
+        - label: More
+        - label: Less
 #  - type: checkboxes
 #    id: repeated
 #    attributes:
