@@ -1,7 +1,7 @@
 Testing some gh cli features
 
-**Note**
-This is a note
+>**Note**
+>This is a note
 
-**Warning**
-This is a warning
+>**Warning**
+>This is a warning
